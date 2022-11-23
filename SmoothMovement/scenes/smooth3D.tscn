@@ -1,0 +1,191 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/1024.png" type="Texture" id=1]
+[ext_resource path="res://scenes/player3D.gd" type="Script" id=2]
+[ext_resource path="res://assets/BG256.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 1 )
+detail_enabled = true
+detail_blend_mode = 3
+detail_uv_layer = 1
+detail_albedo = ExtResource( 3 )
+uv1_triplanar = true
+uv2_scale = Vector3( 0.5, 0.5, 0.5 )
+uv2_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="Environment" id=2]
+background_mode = 1
+background_color = Color( 0.5, 0.5, 0.5, 1 )
+ambient_light_color = Color( 0.5, 0.5, 0.5, 1 )
+ssao_enabled = true
+ssao_light_affect = 1.0
+ssao_quality = 2
+dof_blur_far_distance = 15.0
+dof_blur_far_quality = 2
+dof_blur_near_distance = 14.0
+dof_blur_near_transition = 4.0
+dof_blur_near_amount = 0.12
+dof_blur_near_quality = 2
+
+[sub_resource type="CapsuleMesh" id=3]
+radius = 0.5
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 1, 0.504167, 0.15, 1 )
+
+[sub_resource type="CapsuleShape" id=5]
+radius = 0.5
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 1 )
+uv1_offset = Vector3( 0, 0.5, 0 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=8]
+material = SubResource( 7 )
+size = Vector3( 2, 1, 2 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 1, 0.5, 1 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "Elevator"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Elevator:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Vector3( 12, 7.5, 5 ), Vector3( 12, 7.5, 13 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Elevator:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 12, 7.5, 5 ) ]
+}
+
+[node name="Spatial" type="Spatial"]
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+width = 128.0
+depth = 128.0
+material = SubResource( 6 )
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 10 )
+width = 4.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox4" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 22 )
+width = 4.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 16 )
+width = 4.0
+height = 4.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox5" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 16 )
+width = 4.0
+height = 6.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox6" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, 16 )
+width = 4.0
+height = 8.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox8" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, 2 )
+width = 4.0
+height = 8.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox9" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, 2 )
+operation = 2
+height = 8.0
+material = SubResource( 1 )
+
+[node name="CSGBox10" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1.5, 2 )
+operation = 2
+height = 3.0
+material = SubResource( 1 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.866025, -0.433013, -0.25, -4.37114e-08, -0.5, 0.866025, -0.5, -0.75, -0.433013, 0, 0, 0 )
+light_energy = 1.5
+shadow_enabled = true
+directional_shadow_normal_bias = 0.1
+directional_shadow_max_distance = 50.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Player" type="KinematicBody" parent="."]
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Player"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Player"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="Camera" type="Camera" parent="Player"]
+transform = Transform( -3.09086e-08, 0.707107, -0.707107, 3.09086e-08, 0.707107, 0.707107, 1, 0, -4.37114e-08, -10, 11, 0 )
+fov = 40.0
+
+[node name="Elevator" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 7.5, 5 )
+motion/sync_to_physics = true
+
+[node name="MeshInstance" type="MeshInstance" parent="Elevator"]
+mesh = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Elevator"]
+shape = SubResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Elevator"
+playback_process_mode = 0
+anims/Elevator = SubResource( 10 )
+anims/RESET = SubResource( 11 )
