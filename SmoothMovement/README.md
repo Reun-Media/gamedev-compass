@@ -10,7 +10,7 @@
 Learn to create a simple player movement in Godot 3.5 with acceleration.
 Includes 2D and 3D examples.
 
-Published on 2022-11-08.
+Published on 2022-11-18.
 
 # Relevant files
 [player2D.gd](./scenes/player2D.gd)
