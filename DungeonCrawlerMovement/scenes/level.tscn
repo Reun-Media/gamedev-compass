@@ -1,0 +1,972 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/level_block/default_material.tres" type="Material" id=1]
+[ext_resource path="res://assets/tileset.png" type="Texture" id=2]
+[ext_resource path="res://addons/level_block/level_block_node.gd" type="Script" id=3]
+[ext_resource path="res://scenes/entity/player/player.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+fog_color = Color( 0, 0, 0, 1 )
+fog_depth_begin = 5.0
+fog_depth_end = 20.0
+
+[node name="Level" type="Spatial"]
+
+[node name="Blocks" type="Spatial" parent="."]
+
+[node name="LevelBlock22" type="Spatial" parent="Blocks"]
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+top_face = 14
+bottom_face = 14
+
+[node name="LevelBlock2" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+west_face = 8
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock3" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+north_face = 1
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock4" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock10" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock11" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 11
+west_face = 12
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock12" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 10
+west_face = 10
+top_face = 10
+bottom_face = 10
+
+[node name="LevelBlock13" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -10 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+south_face = 10
+west_face = 10
+top_face = 10
+bottom_face = 10
+
+[node name="LevelBlock14" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+top_face = 10
+bottom_face = 10
+
+[node name="LevelBlock15" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -10 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 10
+south_face = 10
+top_face = 10
+bottom_face = 10
+
+[node name="LevelBlock16" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -12 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 10
+top_face = 10
+bottom_face = 10
+
+[node name="LevelBlock17" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+top_face = 10
+bottom_face = 10
+
+[node name="LevelBlock18" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -12 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+west_face = 10
+top_face = 10
+bottom_face = 10
+
+[node name="LevelBlock19" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -14 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+north_face = 10
+west_face = 10
+top_face = 10
+bottom_face = 10
+
+[node name="LevelBlock20" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+north_face = 13
+top_face = 10
+bottom_face = 10
+
+[node name="LevelBlock21" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -14 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+north_face = 10
+east_face = 10
+top_face = 10
+bottom_face = 10
+
+[node name="LevelBlock5" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+north_face = 2
+east_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock6" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 3
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock7" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+south_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock8" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+south_face = 6
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock9" type="Spatial" parent="Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+south_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LongCorridor" type="Spatial" parent="."]
+
+[node name="LevelBlock" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock2" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -2 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock3" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -4 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock4" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -6 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock5" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -8 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 6
+west_face = 6
+top_face = 5
+bottom_face = 4
+
+[node name="OmniLight3" type="OmniLight" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -8 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+
+[node name="LevelBlock6" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -10 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock7" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -12 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock8" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -14 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock9" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -16 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock10" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -18 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 6
+west_face = 6
+top_face = 5
+bottom_face = 4
+
+[node name="OmniLight4" type="OmniLight" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -18 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+
+[node name="LevelBlock11" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -20 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock12" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -22 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock13" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -24 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock14" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -26 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock15" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -28 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 6
+west_face = 6
+top_face = 5
+bottom_face = 4
+
+[node name="OmniLight5" type="OmniLight" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -28 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+
+[node name="LevelBlock16" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -30 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock17" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -32 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock18" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -34 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock19" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -36 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock20" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -38 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 6
+west_face = 6
+top_face = 5
+bottom_face = 4
+
+[node name="OmniLight6" type="OmniLight" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -38 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+
+[node name="LevelBlock21" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -40 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock22" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -42 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock23" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -44 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock24" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -46 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock25" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -48 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 6
+west_face = 6
+top_face = 5
+bottom_face = 4
+
+[node name="OmniLight7" type="OmniLight" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -48 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+
+[node name="LevelBlock26" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -50 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock27" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -52 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock28" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -54 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock29" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -56 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock30" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -58 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 6
+west_face = 6
+top_face = 5
+bottom_face = 4
+
+[node name="OmniLight8" type="OmniLight" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -58 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+
+[node name="LevelBlock31" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -60 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock32" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -62 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock33" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -64 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock34" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -66 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock35" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -68 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 6
+west_face = 6
+top_face = 5
+bottom_face = 4
+
+[node name="OmniLight9" type="OmniLight" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -68 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+
+[node name="LevelBlock36" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -70 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock37" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -72 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock38" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -74 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock39" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -76 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock40" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -78 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 6
+west_face = 6
+top_face = 5
+bottom_face = 4
+
+[node name="OmniLight10" type="OmniLight" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -78 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+
+[node name="LevelBlock41" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -80 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock42" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -82 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock43" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -84 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock44" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -86 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock45" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -88 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 6
+west_face = 6
+top_face = 5
+bottom_face = 4
+
+[node name="OmniLight11" type="OmniLight" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -88 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+
+[node name="LevelBlock46" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -90 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock47" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -92 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock48" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -94 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock49" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -96 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock50" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -98 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 6
+west_face = 6
+top_face = 5
+bottom_face = 4
+
+[node name="OmniLight12" type="OmniLight" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -98 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+
+[node name="LevelBlock51" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -100 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock52" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -102 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock53" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -104 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock54" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -106 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock55" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -108 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 6
+west_face = 6
+top_face = 5
+bottom_face = 4
+
+[node name="OmniLight13" type="OmniLight" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -108 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+
+[node name="LevelBlock56" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -110 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock57" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -112 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock58" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -114 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock59" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -116 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 4
+
+[node name="LevelBlock60" type="Spatial" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -118 )
+script = ExtResource( 3 )
+material = ExtResource( 1 )
+texture_sheet = ExtResource( 2 )
+texture_size = 32
+east_face = 6
+west_face = 6
+top_face = 5
+bottom_face = 4
+
+[node name="OmniLight14" type="OmniLight" parent="LongCorridor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -118 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+
+[node name="OmniLight2" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14 )
+light_color = Color( 0.93, 0.837, 0.7905, 1 )
+omni_range = 10.0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
