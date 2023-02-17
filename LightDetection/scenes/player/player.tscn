@@ -1,0 +1,132 @@
+[gd_scene load_steps=11 format=3 uid="uid://c7b1ix1wtarcb"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_uw0n7"]
+[ext_resource type="Texture2D" uid="uid://dairqkv1rcfbp" path="res://scenes/player/assets/light_meter_ui.svg" id="2_6ohhj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbwvg"]
+radius = 0.2
+height = 1.0
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_3a27g"]
+dof_blur_far_distance = 5.0
+dof_blur_far_transition = 8.0
+dof_blur_near_distance = 5.0
+dof_blur_near_transition = 6.0
+dof_blur_amount = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8e1wd"]
+cull_mode = 2
+backlight = Color(1, 1, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rxubc"]
+material = SubResource("StandardMaterial3D_8e1wd")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xf4cn"]
+material = SubResource("StandardMaterial3D_8e1wd")
+top_radius = 0.0
+bottom_radius = 0.4
+height = 0.4
+rings = 1
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="SphereMesh" id="SphereMesh_81o2g"]
+lightmap_size_hint = Vector2i(11, 6)
+material = SubResource("StandardMaterial3D_8e1wd")
+radius = 0.3
+height = 0.6
+radial_segments = 4
+rings = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pel6"]
+atlas = ExtResource("2_6ohhj")
+region = Rect2(0, 128, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdcc4"]
+atlas = ExtResource("2_6ohhj")
+region = Rect2(0, 0, 256, 128)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_uw0n7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_rbwvg")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+cull_mask = 524287
+attributes = SubResource("CameraAttributesPractical_3a27g")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="LightDetection" type="Node3D" parent="SubViewport"]
+
+[node name="Camera" type="Camera3D" parent="SubViewport/LightDetection"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0)
+fov = 40.0
+size = 0.25
+far = 20.0
+
+[node name="MeshPlane" type="MeshInstance3D" parent="SubViewport/LightDetection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+layers = 524288
+mesh = SubResource("PlaneMesh_rxubc")
+
+[node name="MeshCone" type="MeshInstance3D" parent="SubViewport/LightDetection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+layers = 524288
+mesh = SubResource("CylinderMesh_xf4cn")
+
+[node name="MeshOctahedron" type="MeshInstance3D" parent="SubViewport/LightDetection"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.5, 0)
+visible = false
+layers = 524288
+mesh = SubResource("SphereMesh_81o2g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(256, 256)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(256, 256)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="LightLevel" type="TextureProgressBar" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -192.0
+offset_right = 128.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+step = 0.0
+value = 0.25
+fill_mode = 7
+texture_under = SubResource("AtlasTexture_3pel6")
+texture_progress = SubResource("AtlasTexture_kdcc4")
+tint_under = Color(1, 1, 1, 0.752941)

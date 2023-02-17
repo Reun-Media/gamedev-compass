@@ -1,0 +1,13 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://c1o412knfb1cr"]
+
+[ext_resource type="Texture2D" uid="uid://cd2h7xs2vnuab" path="res://scenes/level/assets/textures/metal_albedo.png" id="1_dpha0"]
+[ext_resource type="Texture2D" uid="uid://bxa5ai5pei3vm" path="res://scenes/level/assets/textures/metal_normal.png" id="2_kqh0w"]
+[ext_resource type="Texture2D" uid="uid://desb07vv0dsk2" path="res://scenes/level/assets/textures/metal_orm.png" id="3_rk87e"]
+
+[resource]
+albedo_texture = ExtResource("1_dpha0")
+orm_texture = ExtResource("3_rk87e")
+normal_enabled = true
+normal_texture = ExtResource("2_kqh0w")
+uv1_triplanar = true
+texture_filter = 2

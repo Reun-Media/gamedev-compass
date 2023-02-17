@@ -1,0 +1,13 @@
+[gd_resource type="ORMMaterial3D" load_steps=6 format=3]
+[ext_resource path="wood_albedo.png" type="Texture" id=1]
+[ext_resource path="wood_orm.png" type="Texture" id=2]
+[ext_resource path="wood_normal.png" type="Texture" id=3]
+[resource]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource( 1 )
+normal_enabled = true
+normal_scale = 1
+normal_texture = ExtResource( 3 )
+
+
+

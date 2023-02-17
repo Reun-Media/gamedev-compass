@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=3 format=3 uid="uid://crhvshf0crdri"]
+
+[ext_resource type="Texture2D" uid="uid://pisanabn8k6y" path="res://scenes/level/assets/textures/brick_floor_albedo.png" id="1_oi50q"]
+[ext_resource type="Texture2D" uid="uid://bhrhnmdoketby" path="res://scenes/level/assets/textures/brick_floor_normal.png" id="2_yx8n0"]
+
+[resource]
+albedo_texture = ExtResource("1_oi50q")
+normal_enabled = true
+normal_texture = ExtResource("2_yx8n0")
+uv1_triplanar = true
+texture_filter = 0

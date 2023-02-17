@@ -1,0 +1,13 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://b2np8pueivj6t"]
+
+[ext_resource type="Texture2D" uid="uid://ck80lnrxyy20f" path="res://scenes/level/assets/textures/wood_albedo.png" id="1_4durt"]
+[ext_resource type="Texture2D" uid="uid://bkd2867otf0p7" path="res://scenes/level/assets/textures/wood_normal.png" id="2_k1inu"]
+[ext_resource type="Texture2D" uid="uid://d2wb0r6so5a2a" path="res://scenes/level/assets/textures/wood_orm.png" id="3_hu4kj"]
+
+[resource]
+albedo_texture = ExtResource("1_4durt")
+orm_texture = ExtResource("3_hu4kj")
+normal_enabled = true
+normal_texture = ExtResource("2_k1inu")
+uv1_triplanar = true
+texture_filter = 2
