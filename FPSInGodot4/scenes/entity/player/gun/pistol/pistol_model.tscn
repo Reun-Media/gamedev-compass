@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc8q6i6jkrr5g"]
+
+[ext_resource type="PackedScene" uid="uid://dlarvrv3lqfr8" path="res://scenes/entity/player/gun/pistol/assets/pistol.glb" id="1_pw0at"]
+[ext_resource type="Material" uid="uid://2cww3hlfumc1" path="res://scenes/entity/player/gun/pistol/assets/pistol_material.tres" id="2_istwc"]
+
+[node name="pistol" instance=ExtResource("1_pw0at")]
+
+[node name="Pistol" parent="." index="0"]
+layers = 2
+surface_material_override/0 = ExtResource("2_istwc")
+surface_material_override/1 = ExtResource("2_istwc")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://owojm8hgm5yt"]
+
+[ext_resource type="PackedScene" uid="uid://dt6r571md0tnp" path="res://scenes/entity/pickup/pickup.tscn" id="1_610kr"]
+[ext_resource type="PackedScene" uid="uid://bc8q6i6jkrr5g" path="res://scenes/entity/player/gun/pistol/pistol_model.tscn" id="2_3dq7k"]
+[ext_resource type="PackedScene" uid="uid://xtnnwdon0bya" path="res://scenes/entity/player/gun/pistol/gun_pistol.tscn" id="2_tj1ty"]
+
+[node name="PickupPistol" instance=ExtResource("1_610kr")]
+gun_scene = ExtResource("2_tj1ty")
+
+[node name="pistol" parent="Model" index="1" instance=ExtResource("2_3dq7k")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -0.0122993, 0.0720291)
+
+[node name="Pistol" parent="Model/pistol" index="0"]
+layers = 1
+
+[editable path="Model/pistol"]

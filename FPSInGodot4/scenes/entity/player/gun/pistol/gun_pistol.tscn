@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=3 uid="uid://xtnnwdon0bya"]
+
+[ext_resource type="PackedScene" uid="uid://hs87njuiclwl" path="res://scenes/entity/player/gun/gun_base.tscn" id="1_jiy23"]
+[ext_resource type="Texture2D" uid="uid://civcmkuh4l0yw" path="res://scenes/entity/player/gun/pistol/assets/pistol_icon.png" id="2_s4kti"]
+[ext_resource type="PackedScene" uid="uid://cqv1b0nh31vwy" path="res://scenes/entity/player/bullet/pistol/bullet_pistol.tscn" id="3_4eeob"]
+[ext_resource type="PackedScene" uid="uid://bc8q6i6jkrr5g" path="res://scenes/entity/player/gun/pistol/pistol_model.tscn" id="4_sly8a"]
+
+[sub_resource type="Animation" id="Animation_4p3n5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.062, -0.052, -0.102)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uv2qn"]
+resource_name = "fire"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.125, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector3(0.062, -0.046, -0.091), Vector3(0.062, -0.052, -0.102)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector3(0.0680679, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6bpfl"]
+_data = {
+"RESET": SubResource("Animation_4p3n5"),
+"fire": SubResource("Animation_uv2qn")
+}
+
+[node name="GunPistol" instance=ExtResource("1_jiy23")]
+display_name = "Pulse Pistol"
+gun_icon = ExtResource("2_s4kti")
+ammo = 100
+bullet_scene = ExtResource("3_4eeob")
+
+[node name="Model" parent="." index="0"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.062, -0.052, -0.102)
+
+[node name="pistol" parent="Model" index="0" instance=ExtResource("4_sly8a")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.255239, -0.525412, -0.558464)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Model" index="1"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.255905, -0.287698, -1.29935)
+layers = 2
+light_color = Color(0, 0.5, 1, 1)
+light_energy = 0.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+omni_range = 2.5
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_6bpfl")
+}
+
+[node name="Reference" parent="." index="2"]
+visible = false
+
+[node name="ShootPoint" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.126, -0.12303, -0.41)

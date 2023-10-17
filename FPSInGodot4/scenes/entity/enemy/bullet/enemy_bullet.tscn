@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://jdny71ns3ajs"]
+
+[ext_resource type="Script" path="res://scenes/entity/enemy/bullet/enemy_bullet.gd" id="1_6g22d"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2h8fx"]
+
+[node name="EnemyBullet" type="Area3D"]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_6g22d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_2h8fx")

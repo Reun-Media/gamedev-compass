@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://xm8frptocv3o"]
+
+[ext_resource type="FontFile" uid="uid://d35d868jbn6cx" path="res://assets/Heebo-Medium.ttf" id="1_5tki3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6d5u1"]
+bg_color = Color(0, 0, 0, 0.501961)
+skew = Vector2(0.25, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3380"]
+bg_color = Color(1, 1, 1, 1)
+skew = Vector2(0.25, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_oqnog"]
+base_font = ExtResource("1_5tki3")
+spacing_top = -5
+spacing_bottom = -10
+
+[resource]
+default_font = SubResource("FontVariation_oqnog")
+default_font_size = 24
+ProgressBar/styles/background = SubResource("StyleBoxFlat_6d5u1")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_q3380")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bktwacbsocov5"]
+
+[ext_resource type="PackedScene" uid="uid://dcs1blqefn0m3" path="res://scenes/entity/player/bullet/bullet_hole.tscn" id="1_iql1d"]
+[ext_resource type="Texture2D" uid="uid://cmf8ekganf445" path="res://scenes/entity/player/bullet/baton/assets/baton_hole_albedo.png" id="2_yguwg"]
+[ext_resource type="Texture2D" uid="uid://15ftc8wkgnph" path="res://scenes/entity/player/bullet/baton/assets/baton_hole_normal.png" id="3_kiucc"]
+[ext_resource type="Texture2D" uid="uid://5n84k0hubcrb" path="res://scenes/entity/player/bullet/baton/assets/baton_hole_orm.png" id="4_2p5t1"]
+
+[node name="BatonHole" instance=ExtResource("1_iql1d")]
+transform = Transform3D(-0.965926, -1.13134e-08, -0.258819, -0.258819, 4.2222e-08, 0.965926, -6.68479e-15, 1, -4.37114e-08, 0, 0, 0)
+size = Vector3(1, 1, 1)
+texture_albedo = ExtResource("2_yguwg")
+texture_normal = ExtResource("3_kiucc")
+texture_orm = ExtResource("4_2p5t1")
+
+[node name="Test" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://la1w4fr0ukx2"]
+
+[ext_resource type="PackedScene" uid="uid://c5q6tfqljalv3" path="res://scenes/entity/enemy/capsule/assets/capsule_enemy.glb" id="1_1gp1g"]
+[ext_resource type="Material" uid="uid://4jadpueur0uu" path="res://scenes/entity/enemy/capsule/assets/capsule_enemy_material.tres" id="2_23ece"]
+
+[node name="capsule_enemy" instance=ExtResource("1_1gp1g")]
+
+[node name="Body" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_23ece")
+surface_material_override/1 = ExtResource("2_23ece")
+surface_material_override/2 = ExtResource("2_23ece")
+
+[node name="Wheel" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_23ece")
+surface_material_override/1 = ExtResource("2_23ece")
+
+[node name="Barrel" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_23ece")

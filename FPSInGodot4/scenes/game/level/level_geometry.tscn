@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi8ewqjqhfvv0"]
+
+[ext_resource type="PackedScene" uid="uid://d3uvc0yshrs6c" path="res://scenes/game/level/assets/level.glb" id="1_gj5hy"]
+[ext_resource type="Material" uid="uid://c7m4dund6n2ph" path="res://scenes/game/level/assets/concrete.tres" id="2_c53vt"]
+[ext_resource type="Material" uid="uid://cwi4446xnjcgm" path="res://scenes/game/level/assets/concrete_tiles.tres" id="3_2sxnd"]
+[ext_resource type="Material" uid="uid://f55wf3rj8b06" path="res://scenes/game/level/assets/metal_grate.tres" id="4_ce81g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uja0j"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="LevelGeometry" instance=ExtResource("1_gj5hy")]
+
+[node name="LevelBase" parent="." index="0"]
+cast_shadow = 2
+surface_material_override/0 = ExtResource("2_c53vt")
+surface_material_override/1 = ExtResource("3_2sxnd")
+
+[node name="Grate" parent="." index="1"]
+cast_shadow = 2
+surface_material_override/0 = ExtResource("4_ce81g")
+
+[node name="ShadowMesh" parent="." index="2"]
+cast_shadow = 3
+surface_material_override/0 = SubResource("StandardMaterial3D_uja0j")

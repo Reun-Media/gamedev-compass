@@ -1,0 +1,175 @@
+[gd_scene load_steps=17 format=3 uid="uid://b53wq5eqgmmok"]
+
+[ext_resource type="Script" path="res://scenes/entity/player/player.gd" id="1_7un7o"]
+[ext_resource type="Texture2D" uid="uid://sngnai57t42v" path="res://scenes/game/level/assets/sky.exr" id="2_aotj5"]
+[ext_resource type="Script" path="res://scenes/entity/player/player_guns.gd" id="3_kinc4"]
+[ext_resource type="PackedScene" uid="uid://djocbclxtqlwe" path="res://scenes/entity/player/gun/baton/gun_baton.tscn" id="4_w4xld"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ljhif"]
+radius = 0.333
+height = 1.5
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_wmj2u"]
+length = 0.25
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_y3ift"]
+panorama = ExtResource("2_aotj5")
+filter = false
+
+[sub_resource type="Sky" id="Sky_tm5lx"]
+sky_material = SubResource("PanoramaSkyMaterial_y3ift")
+
+[sub_resource type="Environment" id="Environment_bg88o"]
+background_mode = 2
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_tm5lx")
+ambient_light_source = 2
+ambient_light_color = Color(0.345098, 0.407843, 0.537255, 1)
+ambient_light_sky_contribution = 0.08
+ambient_light_energy = 0.5
+reflected_light_source = 1
+tonemap_mode = 2
+ssil_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 1.0
+sdfgi_cascades = 6
+sdfgi_max_distance = 819.2
+sdfgi_energy = 2.0
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_sky_affect = 0.0
+fog_height = -5.0
+fog_height_density = 0.5
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l5pu1"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_f4epi"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uwp8q"]
+gradient = SubResource("Gradient_f4epi")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_jwjpk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xkxdw"]
+resource_name = "hit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.501961), Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hpli7"]
+resource_name = "pickup"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_imdst"]
+_data = {
+"RESET": SubResource("Animation_jwjpk"),
+"hit": SubResource("Animation_xkxdw"),
+"pickup": SubResource("Animation_hpli7")
+}
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 53
+script = ExtResource("1_7un7o")
+
+[node name="CapsuleShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_ljhif")
+
+[node name="RayShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.25, 0)
+shape = SubResource("SeparationRayShape3D_wmj2u")
+
+[node name="FirstPersonCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+cull_mask = 1048573
+fov = 90.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="FirstPersonCamera"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="FirstPersonCamera/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="GunCamera" type="Camera3D" parent="FirstPersonCamera/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+cull_mask = 2
+environment = SubResource("Environment_bg88o")
+fov = 90.0
+
+[node name="Guns" type="Node3D" parent="FirstPersonCamera/SubViewportContainer/SubViewport/GunCamera"]
+script = ExtResource("3_kinc4")
+
+[node name="GunBaton" parent="FirstPersonCamera/SubViewportContainer/SubViewport/GunCamera/Guns" instance=ExtResource("4_w4xld")]
+
+[node name="Bullets" type="Node3D" parent="FirstPersonCamera/SubViewportContainer/SubViewport/GunCamera"]
+
+[node name="CenterPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Overlay" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("CanvasItemMaterial_l5pu1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_uwp8q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_imdst")
+}

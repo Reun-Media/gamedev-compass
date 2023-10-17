@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://y07gqvbn72rj"]
+
+[ext_resource type="Script" path="res://scenes/entity/player/bullet/bullet.gd" id="1_coyu4"]
+[ext_resource type="PackedScene" uid="uid://dcs1blqefn0m3" path="res://scenes/entity/player/bullet/bullet_hole.tscn" id="2_rvxcw"]
+
+[node name="BulletBase" type="Node3D"]
+top_level = true
+script = ExtResource("1_coyu4")
+bullet_hole = ExtResource("2_rvxcw")

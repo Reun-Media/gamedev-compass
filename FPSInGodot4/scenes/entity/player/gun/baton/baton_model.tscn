@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds7ww8fvv2kbe"]
+
+[ext_resource type="PackedScene" uid="uid://dqt21lo3vwnyk" path="res://scenes/entity/player/gun/baton/assets/baton.glb" id="1_iv4w2"]
+[ext_resource type="Material" uid="uid://wjb0c08queaq" path="res://scenes/entity/player/gun/baton/assets/baton.tres" id="2_m2e2m"]
+
+[node name="baton" instance=ExtResource("1_iv4w2")]
+
+[node name="Baton" parent="." index="0"]
+layers = 2
+surface_material_override/0 = ExtResource("2_m2e2m")
+surface_material_override/1 = ExtResource("2_m2e2m")

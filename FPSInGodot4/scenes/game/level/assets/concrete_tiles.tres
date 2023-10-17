@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cwi4446xnjcgm"]
+
+[ext_resource type="Texture2D" uid="uid://c0v2xcpxunxhu" path="res://scenes/game/level/assets/concrete_tiles_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dr7jqiy321hf8" path="res://scenes/game/level/assets/concrete_tiles_orm.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bftdn8xm1wwhl" path="res://scenes/game/level/assets/concrete_tiles_normal.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bicnowlow2cf6" path="res://scenes/game/level/assets/concrete_tiles_heightmap.png" id="3_v8mr2"]
+
+[resource]
+albedo_texture = ExtResource("1")
+roughness_texture = ExtResource("2")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3")
+ao_enabled = true
+ao_texture = ExtResource("2")
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("3_v8mr2")
+texture_filter = 4

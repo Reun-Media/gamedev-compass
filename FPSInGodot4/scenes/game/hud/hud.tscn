@@ -1,0 +1,133 @@
+[gd_scene load_steps=6 format=3 uid="uid://dc36u6jtm6ty2"]
+
+[ext_resource type="Texture2D" uid="uid://bfl4joy0fdlja" path="res://scenes/game/hud/assets/crosshair.svg" id="1_ap7oo"]
+[ext_resource type="Script" path="res://scenes/game/hud/hud.gd" id="1_j6m2y"]
+[ext_resource type="Texture2D" uid="uid://lm6cqlsgh87y" path="res://scenes/entity/player/gun/baton/assets/baton_icon.png" id="3_lquwy"]
+[ext_resource type="Theme" uid="uid://xm8frptocv3o" path="res://scenes/game/hud/hud_theme.tres" id="3_ptoh1"]
+[ext_resource type="Texture2D" uid="uid://b4horxilt8oln" path="res://scenes/game/hud/assets/bullet.svg" id="5_mko7f"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("3_ptoh1")
+script = ExtResource("1_j6m2y")
+
+[node name="Crosshair" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("1_ap7oo")
+
+[node name="Health" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -120.0
+offset_right = 380.0
+offset_bottom = -60.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="Health"]
+layout_mode = 2
+text = "Health"
+
+[node name="HealthBar" type="ProgressBar" parent="Health"]
+custom_minimum_size = Vector2(300, 20)
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="GunInfo" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -175.0
+offset_right = -70.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 10
+theme_override_constants/separation = 0
+
+[node name="Name" type="Label" parent="GunInfo"]
+layout_mode = 2
+text = "Gun Name"
+horizontal_alignment = 2
+
+[node name="Icon" type="TextureRect" parent="GunInfo"]
+custom_minimum_size = Vector2(32, 64)
+layout_mode = 2
+texture = ExtResource("3_lquwy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AmmoBox" type="HBoxContainer" parent="GunInfo"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Ammo" type="Label" parent="GunInfo/AmmoBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_ptoh1")
+theme_override_font_sizes/font_size = 32
+text = "50"
+horizontal_alignment = 2
+
+[node name="Icon" type="TextureRect" parent="GunInfo/AmmoBox"]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+texture = ExtResource("5_mko7f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Score" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 50.0
+offset_right = 50.0
+offset_bottom = 104.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Score"]
+layout_mode = 2
+text = "Score"
+horizontal_alignment = 1
+
+[node name="Amount" type="Label" parent="Score"]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1

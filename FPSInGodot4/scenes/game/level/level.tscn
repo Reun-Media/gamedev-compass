@@ -1,0 +1,152 @@
+[gd_scene load_steps=7 format=3 uid="uid://hhs4ulxi1llk"]
+
+[ext_resource type="Texture2D" uid="uid://sngnai57t42v" path="res://scenes/game/level/assets/sky.exr" id="1_d65wy"]
+[ext_resource type="PackedScene" uid="uid://bi8ewqjqhfvv0" path="res://scenes/game/level/level_geometry.tscn" id="1_kjd6d"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_y3ift"]
+panorama = ExtResource("1_d65wy")
+filter = false
+
+[sub_resource type="Sky" id="Sky_tm5lx"]
+sky_material = SubResource("PanoramaSkyMaterial_y3ift")
+
+[sub_resource type="Environment" id="Environment_rkw4f"]
+background_mode = 2
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_tm5lx")
+ambient_light_source = 2
+ambient_light_color = Color(0.345098, 0.407843, 0.537255, 1)
+ambient_light_sky_contribution = 0.08
+ambient_light_energy = 0.5
+reflected_light_source = 1
+tonemap_mode = 2
+ssao_radius = 2.0
+ssil_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 1.0
+sdfgi_cascades = 6
+sdfgi_max_distance = 819.2
+sdfgi_energy = 2.0
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_sky_affect = 0.0
+fog_height = -5.0
+fog_height_density = 0.5
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_8wbc1"]
+vertices = PackedVector3Array(-31, 0.199997, -14.5, -25, 0.199997, -14.5, -25, 0.199997, -16.5, -16.75, 0.199997, -24.75, -13.75, 0.199997, -25, -13.75, 0.199997, -31, -16.75, 0.199997, -24.75, -13.75, 0.199997, -31, -23.75, 0.199997, -31, -31, 0.199997, -23.75, -31, 0.199997, -14.5, -25, 0.199997, -16.5, -13.75, 0.199997, -25, -5.75, 0.199997, -25, -5.75, 0.199997, -31, -13.75, 0.199997, -31, 3.5, 0.199997, -25, 5.5, 0.199997, -25, 5.5, 0.199997, -31, -5.75, 0.199997, -31, -5.75, 0.199997, -25, -3.75, 0.199997, -25, -3.25, 0.199997, -24.5, -3.25, 0.199997, -22.75, 3, 0.199997, -22.75, 3, 0.199997, -24.5, -3.75, 0.199997, -25, -3.25, 0.199997, -24.5, 3, 0.199997, -24.5, 3.5, 0.199997, -25, 5.5, 0.199997, -31, -5.75, 0.199997, -31, 5.5, 0.199997, -25, 13.75, 0.199997, -25, 13.75, 0.199997, -31, 5.5, 0.199997, -31, 24.75, 0.199997, -16.5, 24.75, 0.199997, -15, 31, 0.199997, -15.25, 13.75, 0.199997, -31, 13.75, 0.199997, -25, 16.5, 0.199997, -24.75, 16.5, 0.199997, -24.75, 24.75, 0.199997, -16.5, 31, 0.199997, -15.25, 31, 0.199997, -23.75, 23.75, 0.199997, -31, 13.75, 0.199997, -31, -3, 0.199997, -15.75, 3, 0.199997, -15.75, 3, 0.199997, -22.75, -3.25, 0.199997, -22.75, -6.25, 1.4, -15, -6.25, 1.4, -13.5, -4.25, 0.399998, -13.5, -3.5, 0.199997, -15, 4, 0.199997, -12.75, 4.25, 0.399998, -13.5, 3.5, 0.199997, -15, -3.5, 0.199997, -15, -4.25, 0.399998, -13.5, -4, 0.199997, -12.75, -3, 0.199997, -15.75, -3.5, 0.199997, -15, -4, 0.199997, -12.75, 4, 0.199997, -12.75, 3.5, 0.199997, -15, 3, 0.199997, -15.75, 13.5, 3.2, -10.25, 13.5, 1.4, -6.5, 15, 1.4, -6.5, 15, 3.2, -11.75, 15, 2.8, -9.125, 15, 3.2, -10.4375, 10.25, 3.2, -13.5, 11.75, 3.2, -15, 3.5, 0.199997, -15, 4.25, 0.399998, -13.5, 5.45, 0.799997, -13.5, 7.85, 2.2, -13.5, 10.375, 3.2, -15, 9, 2.8, -15, 4.875, 0.599997, -15, 10.25, 3.2, -13.5, 13.5, 3.2, -10.25, 15, 3.2, -11.75, 11.75, 3.2, -15, 24.75, 0.199997, -15, 24.75, 0.199997, -5.25, 31, 0.199997, -5, 31, 0.199997, -15.25, -6.5, 1.4, 15.25, -6.5, 1.4, 13.75, -10.25, 3.2, 13.75, -11.75, 3.2, 15.25, -10.4375, 3.2, 15.25, -9.125, 2.8, 15.25, -13.5, 0.399998, -4.25, -13.75, 0.799997, -5.25, -15, 0.199997, -3.5, -10.5, 3.2, -13.5, -6.25, 1.4, -13.5, -6.25, 1.4, -15, -12, 3.2, -15, -9.08333, 2.8, -13.5, -9.125, 2.8, -15, -10.5625, 3.2, -15, -12.75, 0.199997, -4, -13.5, 0.399998, -4.25, -15, 0.199997, -3.5, -13.75, 3.2, -10.25, -10.5, 3.2, -13.5, -12, 3.2, -15, -15.25, 3.2, -11.75, -12.75, 0.199997, -4, -15, 0.199997, -3.5, -15.75, 0.199997, -3, -15.75, 0.199997, 3, -15, 0.199997, 3.5, -12.75, 0.199997, 4, -15.25, 3.2, 11.75, -11.75, 3.2, 15.25, -10.25, 3.2, 13.75, -13.75, 3.2, 10.25, -15, 0.199997, 3.5, -15.25, 3.2, 11.75, -13.75, 3.2, 10.25, -13.5, 0.399998, 4.25, -15.0417, 0.599997, 4.875, -15.1667, 2.8, 9, -15.2083, 3.2, 10.375, -13.7, 2.8, 9.05, -13.55, 0.799997, 5.45, -15, 0.199997, 3.5, -13.5, 0.399998, 4.25, -12.75, 0.199997, 4, -13.75, 0.799997, -5.25, -13.75, 3.2, -10.25, -15.25, 3.2, -11.75, -15, 0.199997, -3.5, -15.2083, 3.2, -10.375, -15.125, 2, -7.625, -15.0833, 1.2, -6.25, -31, 0.199997, -5.75, -25, 0.199997, -5.75, -25, 0.199997, -14.5, -31, 0.199997, -14.5, -4.5, 0.399998, 13.75, -6.5, 1.4, 13.75, -6.5, 1.4, 15.25, -3.5, 0.199997, 15.25, -5.5, 0.799997, 15.25, -12, 0.199997, 4.5, -12.25, 0.199997, 9.75, -9.5, 0.199997, 12.25, -4.25, 0.199997, 12.5, 4.25, 0.199997, 12.5, 6.5, 1.4, 15.25, 6.5, 1.4, 13.75, 4.5, 0.399998, 13.75, 3.5, 0.199997, 15.25, 4.5, 0.399998, 15.25, 4.5, 0.199997, -12, 4, 0.199997, -12.75, -4, 0.199997, -12.75, -4.5, 0.199997, -12, 13.5, 0.399998, 4.5, 13.5, 1.4, 6.5, 15, 1.4, 6.5, 15, 0.199997, 3.5, 15, 0.399998, 4.5, -12.75, 0.199997, -4, -12.75, 0.199997, 4, -12, 0.199997, 4.5, -12, 0.199997, -4.5, 15, 1.4, -6.5, 13.5, 1.4, -6.5, 13.5, 0.399998, -4.5, 15, 0.199997, -3.5, 15, 0.799997, -5.5, -4.5, 0.199997, -12, -9.75, 0.199997, -12, -12, 0.199997, -9.75, -12, 0.199997, -4.5, -4.25, 0.199997, 12.5, -4.5, 0.399998, 13.75, -3.5, 0.199997, 15.25, 3.5, 0.199997, 15.25, 4.5, 0.399998, 13.75, 4.25, 0.199997, 12.5, 12.25, 0.199997, 4.25, 13.5, 0.399998, 4.5, 15, 0.199997, 3.5, 15, 0.199997, -3.5, 13.5, 0.399998, -4.5, 12.25, 0.199997, -4.25, 4.25, 0.199997, 12.5, -4.25, 0.199997, 12.5, -3.5, 0.199997, 15.25, -3, 0.199997, 16, 3, 0.199997, 16, 3.5, 0.199997, 15.25, 4.5, 0.199997, -12, -4.5, 0.199997, -12, -12, 0.199997, -4.5, -12, 0.199997, 4.5, 4.25, 0.199997, 12.5, 12.25, 0.199997, 4.25, 12.25, 0.199997, -4.25, 12.25, 0.199997, 4.25, 15, 0.199997, 3.5, 15.75, 0.199997, 3, 15.75, 0.199997, -3, 15, 0.199997, -3.5, 4.25, 0.199997, 12.5, 9.5, 0.199997, 12.25, 12, 0.199997, 9.75, 12.25, 0.199997, 4.25, 12, 0.199997, -9.75, 9.75, 0.199997, -12, 4.5, 0.199997, -12, 12.25, 0.199997, 4.25, 12.25, 0.199997, -4.25, -3.75, -19.8, -7, -7, -19.8, -3.75, -4.75, -19.8, -2.5, -2.5, -19.8, -4.75, -7, -19.8, 3.75, -3.75, -19.8, 7, -2.5, -19.8, 4.75, -4.75, -19.8, 2.5, 3.75, -19.8, -7, -3.75, -19.8, -7, -2.5, -19.8, -4.75, 2.5, -19.8, -4.75, -4.75, -19.8, 2.5, -4.75, -19.8, -2.5, -7, -19.8, -3.75, -7, -19.8, 3.75, 7, -19.8, -3.75, 3.75, -19.8, -7, 2.5, -19.8, -4.75, 4.75, -19.8, -2.5, 4.75, -19.8, 2.5, 2.5, -19.8, 4.75, 3.75, -19.8, 7, 7, -19.8, 3.75, 7, -19.8, 3.75, 7, -19.8, -3.75, 4.75, -19.8, -2.5, 4.75, -19.8, 2.5, -3.75, -19.8, 7, 3.75, -19.8, 7, 2.5, -19.8, 4.75, -2.5, -19.8, 4.75, -31, 0.199997, 5.75, -25, 0.199997, 5.75, -25, 0.199997, 3.75, -25, 0.199997, -3.75, -25, 0.199997, -5.75, -31, 0.199997, -5.75, -24.5, 0.199997, 3.25, -22.5, 0.199997, 3.25, -22.5, 0.199997, -3.25, -24.5, 0.199997, -3.25, -31, 0.199997, -5.75, -31, 0.199997, 5.75, -25, 0.199997, 3.75, -24.5, 0.199997, 3.25, -24.5, 0.199997, -3.25, -25, 0.199997, -3.75, 24.75, 0.199997, 3.75, 24.75, 0.199997, 5.25, 31, 0.199997, 5, 31, 0.199997, -5, 24.75, 0.199997, -5.25, 24.75, 0.199997, -3.75, 22.25, 0.199997, -3.25, 22.25, 0.199997, 3.25, 24.25, 0.199997, 3.25, 24.25, 0.199997, -3.25, 24.25, 0.199997, -3.25, 24.25, 0.199997, 3.25, 24.75, 0.199997, 3.75, 31, 0.199997, 5, 31, 0.199997, -5, 24.75, 0.199997, -3.75, -22.5, 0.199997, 3.25, -15.75, 0.199997, 3, -15.75, 0.199997, -3, -22.5, 0.199997, -3.25, 15.75, 0.199997, -3, 15.75, 0.199997, 3, 22.25, 0.199997, 3.25, 22.25, 0.199997, -3.25, 24.75, 0.199997, 5.25, 24.75, 0.199997, 15, 31, 0.199997, 15.25, 31, 0.199997, 5, -31, 0.199997, 14.5, -25, 0.199997, 14.5, -25, 0.199997, 5.75, -31, 0.199997, 5.75, 10, 3.2, 13.75, 6.5, 1.4, 13.75, 6.5, 1.4, 15.25, 11.5, 3.2, 15.25, 9, 2.8, 15.25, 10.25, 3.2, 15.25, 15, 3.2, 12, 13.5, 3.2, 10.25, 10, 3.2, 13.75, 11.5, 3.2, 15.25, 15, 1.4, 6.5, 13.5, 1.4, 6.5, 13.5, 3.2, 10.25, 15, 3.2, 12, 15, 3.2, 10.625, 15, 2.8, 9.25, 13.5, 2.2, 7.75, -25, 0.199997, 16.5, -25, 0.199997, 14.5, -31, 0.199997, 14.5, -15.25, 0.199997, 31.25, -15, 0.199997, 25, -16.5, 0.199997, 25, -23.5, 0.199997, 31.25, -15.25, 0.199997, 31.25, -16.5, 0.199997, 25, -20.75, 0.199997, 20.75, -31, 0.199997, 23.75, -25, 0.199997, 16.5, -31, 0.199997, 14.5, -31, 0.199997, 23.75, -20.75, 0.199997, 20.75, 31, 0.199997, 15.25, 24.75, 0.199997, 15, 24.75, 0.199997, 16.5, 16.25, 0.199997, 25, 14.75, 0.199997, 25, 15, 0.199997, 31.25, 31, 0.199997, 23.75, 31, 0.199997, 15.25, 24.75, 0.199997, 16.5, 20.5, 0.199997, 20.75, 23.5, 0.199997, 31.25, 16.25, 0.199997, 25, 15, 0.199997, 31.25, 23.5, 0.199997, 31.25, 20.5, 0.199997, 20.75, 3, 0.199997, 22.75, 3, 0.199997, 16, -3, 0.199997, 16, -3.25, 0.199997, 22.75, -3.75, 0.199997, 25, -5.25, 0.199997, 25, -5, 0.199997, 31.25, 4.75, 0.199997, 31.25, 5, 0.199997, 25, 3.5, 0.199997, 25, 3, 0.199997, 24.5, 3, 0.199997, 22.75, -3.25, 0.199997, 22.75, -3.25, 0.199997, 24.5, 3.5, 0.199997, 25, 3, 0.199997, 24.5, -3.25, 0.199997, 24.5, -3.75, 0.199997, 25, -5, 0.199997, 31.25, 4.75, 0.199997, 31.25, -15.25, 0.199997, 31.25, -5, 0.199997, 31.25, -5.25, 0.199997, 25, -15, 0.199997, 25, 4.75, 0.199997, 31.25, 15, 0.199997, 31.25, 14.75, 0.199997, 25, 5, 0.199997, 25)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 5, 4), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 8), PackedInt32Array(11, 8, 6), PackedInt32Array(6, 8, 7), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(18, 17, 16), PackedInt32Array(21, 20, 19), PackedInt32Array(25, 24, 22), PackedInt32Array(22, 24, 23), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 29), PackedInt32Array(29, 26, 31), PackedInt32Array(29, 31, 30), PackedInt32Array(35, 34, 32), PackedInt32Array(32, 34, 33), PackedInt32Array(38, 37, 36), PackedInt32Array(41, 40, 39), PackedInt32Array(44, 43, 45), PackedInt32Array(45, 43, 46), PackedInt32Array(46, 43, 42), PackedInt32Array(46, 42, 47), PackedInt32Array(49, 48, 50), PackedInt32Array(50, 48, 51), PackedInt32Array(53, 52, 54), PackedInt32Array(54, 52, 55), PackedInt32Array(58, 57, 56), PackedInt32Array(59, 61, 60), PackedInt32Array(63, 62, 64), PackedInt32Array(64, 62, 67), PackedInt32Array(64, 67, 66), PackedInt32Array(64, 66, 65), PackedInt32Array(71, 73, 68), PackedInt32Array(68, 73, 72), PackedInt32Array(68, 72, 70), PackedInt32Array(68, 70, 69), PackedInt32Array(76, 82, 77), PackedInt32Array(77, 82, 78), PackedInt32Array(78, 82, 79), PackedInt32Array(79, 82, 81), PackedInt32Array(79, 81, 80), PackedInt32Array(79, 80, 74), PackedInt32Array(74, 80, 75), PackedInt32Array(86, 85, 83), PackedInt32Array(83, 85, 84), PackedInt32Array(87, 90, 88), PackedInt32Array(88, 90, 89), PackedInt32Array(94, 93, 95), PackedInt32Array(95, 93, 96), PackedInt32Array(96, 93, 91), PackedInt32Array(91, 93, 92), PackedInt32Array(99, 98, 97), PackedInt32Array(103, 106, 100), PackedInt32Array(100, 106, 105), PackedInt32Array(100, 105, 104), PackedInt32Array(104, 105, 101), PackedInt32Array(101, 105, 102), PackedInt32Array(109, 108, 107), PackedInt32Array(113, 112, 110), PackedInt32Array(110, 112, 111), PackedInt32Array(115, 114, 116), PackedInt32Array(116, 114, 117), PackedInt32Array(117, 114, 118), PackedInt32Array(118, 114, 119), PackedInt32Array(123, 122, 120), PackedInt32Array(120, 122, 121), PackedInt32Array(124, 127, 128), PackedInt32Array(128, 127, 132), PackedInt32Array(128, 132, 131), PackedInt32Array(128, 131, 129), PackedInt32Array(129, 131, 126), PackedInt32Array(129, 126, 130), PackedInt32Array(130, 126, 125), PackedInt32Array(133, 135, 134), PackedInt32Array(138, 137, 140), PackedInt32Array(140, 137, 141), PackedInt32Array(141, 137, 142), PackedInt32Array(142, 137, 136), PackedInt32Array(142, 136, 139), PackedInt32Array(146, 145, 143), PackedInt32Array(143, 145, 144), PackedInt32Array(149, 148, 151), PackedInt32Array(151, 148, 147), PackedInt32Array(151, 147, 150), PackedInt32Array(153, 152, 154), PackedInt32Array(154, 152, 155), PackedInt32Array(155, 152, 156), PackedInt32Array(160, 159, 161), PackedInt32Array(161, 159, 158), PackedInt32Array(161, 158, 157), PackedInt32Array(163, 162, 164), PackedInt32Array(164, 162, 165), PackedInt32Array(169, 170, 166), PackedInt32Array(166, 170, 168), PackedInt32Array(166, 168, 167), PackedInt32Array(171, 174, 172), PackedInt32Array(172, 174, 173), PackedInt32Array(175, 179, 176), PackedInt32Array(176, 179, 177), PackedInt32Array(177, 179, 178), PackedInt32Array(181, 180, 182), PackedInt32Array(182, 180, 183), PackedInt32Array(184, 186, 185), PackedInt32Array(189, 188, 187), PackedInt32Array(190, 192, 191), PackedInt32Array(195, 194, 193), PackedInt32Array(201, 200, 196), PackedInt32Array(196, 200, 199), PackedInt32Array(196, 199, 198), PackedInt32Array(196, 198, 197), PackedInt32Array(203, 202, 204), PackedInt32Array(204, 202, 205), PackedInt32Array(205, 202, 207), PackedInt32Array(205, 207, 206), PackedInt32Array(213, 212, 208), PackedInt32Array(208, 212, 211), PackedInt32Array(208, 211, 210), PackedInt32Array(208, 210, 209), PackedInt32Array(215, 214, 216), PackedInt32Array(216, 214, 217), PackedInt32Array(219, 218, 220), PackedInt32Array(220, 218, 222), PackedInt32Array(220, 222, 221), PackedInt32Array(226, 225, 223), PackedInt32Array(223, 225, 224), PackedInt32Array(230, 229, 227), PackedInt32Array(227, 229, 228), PackedInt32Array(234, 233, 231), PackedInt32Array(231, 233, 232), PackedInt32Array(235, 238, 236), PackedInt32Array(236, 238, 237), PackedInt32Array(242, 241, 239), PackedInt32Array(239, 241, 240), PackedInt32Array(243, 246, 244), PackedInt32Array(244, 246, 245), PackedInt32Array(250, 249, 247), PackedInt32Array(247, 249, 248), PackedInt32Array(254, 253, 251), PackedInt32Array(251, 253, 252), PackedInt32Array(257, 256, 255), PackedInt32Array(260, 259, 258), PackedInt32Array(264, 263, 261), PackedInt32Array(261, 263, 262), PackedInt32Array(270, 269, 265), PackedInt32Array(265, 269, 268), PackedInt32Array(265, 268, 267), PackedInt32Array(265, 267, 266), PackedInt32Array(273, 272, 271), PackedInt32Array(276, 275, 274), PackedInt32Array(280, 279, 277), PackedInt32Array(277, 279, 278), PackedInt32Array(286, 285, 281), PackedInt32Array(281, 285, 282), PackedInt32Array(282, 285, 283), PackedInt32Array(283, 285, 284), PackedInt32Array(288, 287, 289), PackedInt32Array(289, 287, 290), PackedInt32Array(291, 294, 292), PackedInt32Array(292, 294, 293), PackedInt32Array(295, 298, 296), PackedInt32Array(296, 298, 297), PackedInt32Array(302, 301, 299), PackedInt32Array(299, 301, 300), PackedInt32Array(306, 308, 303), PackedInt32Array(303, 308, 307), PackedInt32Array(303, 307, 305), PackedInt32Array(303, 305, 304), PackedInt32Array(312, 311, 309), PackedInt32Array(309, 311, 310), PackedInt32Array(314, 313, 319), PackedInt32Array(319, 313, 318), PackedInt32Array(319, 318, 315), PackedInt32Array(315, 318, 317), PackedInt32Array(315, 317, 316), PackedInt32Array(322, 321, 320), PackedInt32Array(325, 324, 323), PackedInt32Array(327, 326, 328), PackedInt32Array(328, 326, 329), PackedInt32Array(329, 326, 330), PackedInt32Array(331, 334, 332), PackedInt32Array(332, 334, 333), PackedInt32Array(337, 336, 335), PackedInt32Array(340, 339, 338), PackedInt32Array(343, 342, 344), PackedInt32Array(344, 342, 341), PackedInt32Array(344, 341, 345), PackedInt32Array(346, 349, 347), PackedInt32Array(347, 349, 348), PackedInt32Array(351, 350, 352), PackedInt32Array(352, 350, 353), PackedInt32Array(356, 355, 354), PackedInt32Array(359, 358, 357), PackedInt32Array(363, 362, 360), PackedInt32Array(360, 362, 361), PackedInt32Array(365, 364, 366), PackedInt32Array(366, 364, 367), PackedInt32Array(367, 364, 369), PackedInt32Array(367, 369, 368), PackedInt32Array(373, 372, 370), PackedInt32Array(370, 372, 371), PackedInt32Array(377, 376, 374), PackedInt32Array(374, 376, 375)]
+geometry_parsed_geometry_type = 1
+cell_height = 0.1
+agent_radius = 0.75
+
+[node name="Level" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rkw4f")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.433013, -0.25, 0, 0.5, 0.866026, 0.5, -0.75, 0.433013, 0, 0, 0)
+layers = 3
+light_energy = 2.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 2.0
+light_angular_distance = 0.5
+shadow_enabled = true
+sky_mode = 1
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_8wbc1")
+
+[node name="LevelGeometry" parent="NavigationRegion3D" instance=ExtResource("1_kjd6d")]
+
+[node name="GunShadowGeometry" parent="." instance=ExtResource("1_kjd6d")]
+
+[node name="LevelBase" parent="GunShadowGeometry" index="0"]
+layers = 2
+cast_shadow = 3
+
+[node name="Grate" parent="GunShadowGeometry" index="1"]
+layers = 2
+cast_shadow = 3
+
+[node name="ShadowMesh" parent="GunShadowGeometry" index="2"]
+layers = 2
+
+[node name="FakeGILights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="FakeGILights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, -6)
+layers = 3
+light_volumetric_fog_energy = 0.0
+omni_range = 25.0
+omni_attenuation = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="FakeGILights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, 33)
+layers = 3
+light_color = Color(0.701961, 0.8, 1, 1)
+light_volumetric_fog_energy = 0.0
+omni_range = 20.0
+omni_attenuation = 0.75
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="FakeGILights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 5, 33)
+layers = 3
+light_color = Color(0.701961, 0.8, 1, 1)
+light_volumetric_fog_energy = 0.0
+omni_range = 20.0
+omni_attenuation = 0.75
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="FakeGILights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 5, -7)
+layers = 3
+light_color = Color(0.701961, 0.8, 1, 1)
+light_volumetric_fog_energy = 0.0
+omni_range = 20.0
+omni_attenuation = 0.75
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="FakeGILights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 5, 7)
+layers = 3
+light_color = Color(0.701961, 0.8, 1, 1)
+light_volumetric_fog_energy = 0.0
+omni_range = 20.0
+omni_attenuation = 0.75
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="FakeGILights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 5, -7)
+layers = 3
+light_color = Color(0.701961, 0.8, 1, 1)
+light_volumetric_fog_energy = 0.0
+omni_range = 20.0
+omni_attenuation = 0.75
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="FakeGILights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 5, 7)
+layers = 3
+light_color = Color(0.701961, 0.8, 1, 1)
+light_volumetric_fog_energy = 0.0
+omni_range = 20.0
+omni_attenuation = 0.75
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="FakeGILights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 5, -33)
+layers = 3
+light_color = Color(0.701961, 0.8, 1, 1)
+light_volumetric_fog_energy = 0.0
+omni_range = 20.0
+omni_attenuation = 0.75
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="FakeGILights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, -33)
+layers = 3
+light_color = Color(0.701961, 0.8, 1, 1)
+light_volumetric_fog_energy = 0.0
+omni_range = 20.0
+omni_attenuation = 0.75
+
+[editable path="GunShadowGeometry"]

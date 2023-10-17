@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcs1blqefn0m3"]
+
+[ext_resource type="Texture2D" uid="uid://bfu1v1he70v8m" path="res://scenes/entity/player/bullet/assets/bullet_hole_albedo.png" id="1_3vw8j"]
+[ext_resource type="Texture2D" uid="uid://cppesousvg33e" path="res://scenes/entity/player/bullet/assets/bullet_hole_normal.png" id="1_aw75a"]
+[ext_resource type="Script" path="res://scenes/entity/player/bullet/bullet_hole.gd" id="1_h4r45"]
+[ext_resource type="Texture2D" uid="uid://clg6y83fvlnwj" path="res://scenes/entity/player/bullet/assets/bullet_hole_orm.png" id="3_bc6a3"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1c6c4"]
+
+[node name="BulletHole" type="Decal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+size = Vector3(0.25, 1, 0.25)
+texture_albedo = ExtResource("1_3vw8j")
+texture_normal = ExtResource("1_aw75a")
+texture_orm = ExtResource("3_bc6a3")
+script = ExtResource("1_h4r45")
+
+[node name="Test" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0, 0, 0)
+visible = false
+mesh = SubResource("QuadMesh_1c6c4")

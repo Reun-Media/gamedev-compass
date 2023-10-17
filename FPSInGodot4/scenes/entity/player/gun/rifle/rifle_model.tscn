@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://uu63qv1dxp4y"]
+
+[ext_resource type="PackedScene" uid="uid://bb7xpxfbv0e27" path="res://scenes/entity/player/gun/rifle/assets/rifle.glb" id="1_j0iid"]
+[ext_resource type="Material" uid="uid://cwr2ygcyjy2h4" path="res://scenes/entity/player/gun/rifle/assets/rifle.tres" id="2_bi3uy"]
+
+[node name="rifle" instance=ExtResource("1_j0iid")]
+
+[node name="Rifle" parent="." index="0"]
+layers = 2
+surface_material_override/0 = ExtResource("2_bi3uy")
+surface_material_override/1 = ExtResource("2_bi3uy")

@@ -1,0 +1,66 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://d3uvc0yshrs6c"
+path="res://.godot/imported/level.glb-9341b8155a06012a1c7ac8eff89ddbe1.scn"
+
+[deps]
+
+source_file="res://scenes/game/level/assets/level.glb"
+dest_files=["res://.godot/imported/level.glb-9341b8155a06012a1c7ac8eff89ddbe1.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"@MATERIAL:0": {
+"use_external/path": "res://scenes/game/level/assets/concrete.tres"
+},
+"@MATERIAL:1": {
+"use_external/path": "res://scenes/game/level/assets/concrete_tiles.tres"
+},
+"@MATERIAL:2": {
+"use_external/path": "res://scenes/game/level/assets/metal_grate.tres"
+}
+},
+"meshes": {
+"level_Grate": {
+"generate/lightmap_uv": 1,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": false,
+"save_to_file/make_streamable": "",
+"save_to_file/path": ""
+},
+"level_LevelBase": {
+"generate/lightmap_uv": 1,
+"generate/lods": 0,
+"generate/shadow_meshes": 1,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": false,
+"save_to_file/make_streamable": "",
+"save_to_file/path": ""
+}
+}
+}
+gltf/embedded_image_handling=1

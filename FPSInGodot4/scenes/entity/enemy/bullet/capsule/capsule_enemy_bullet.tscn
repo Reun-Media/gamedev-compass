@@ -1,0 +1,88 @@
+[gd_scene load_steps=14 format=3 uid="uid://cwo6ueep74lbe"]
+
+[ext_resource type="PackedScene" uid="uid://jdny71ns3ajs" path="res://scenes/entity/enemy/bullet/enemy_bullet.tscn" id="1_s21oe"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0cbed"]
+radius = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ft81"]
+shading_mode = 0
+albedo_color = Color(3, 1.5, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_y1w5e"]
+radius = 0.05
+height = 0.1
+
+[sub_resource type="Gradient" id="Gradient_4p3cl"]
+colors = PackedColorArray(1, 1, 1, 1, 0.903553, 0.252173, 1.92523e-07, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e53cw"]
+gradient = SubResource("Gradient_4p3cl")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fopl1"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.25098, 0.25098, 0.25098, 1)
+albedo_texture = SubResource("GradientTexture2D_e53cw")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_kfiut"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.88088, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_q161e"]
+curve = SubResource("Curve_kfiut")
+
+[sub_resource type="Curve" id="Curve_wpwtk"]
+_data = [Vector2(0, 0), 0.0, 0.933661, 0, 0, Vector2(1, 1), 0.931264, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ioou2"]
+curve = SubResource("Curve_wpwtk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_myu0h"]
+emission_shape = 1
+emission_sphere_radius = 0.05
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_q161e")
+turbulence_enabled = true
+turbulence_noise_scale = 7.0
+turbulence_noise_speed = Vector3(1, 1, 1)
+turbulence_influence_min = 0.5
+turbulence_influence_max = 1.0
+turbulence_initial_displacement_min = 0.1
+turbulence_initial_displacement_max = 0.2
+turbulence_influence_over_life = SubResource("CurveTexture_ioou2")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ra3wf"]
+size = Vector2(0.15, 0.15)
+
+[node name="CapsuleEnemyBullet" instance=ExtResource("1_s21oe")]
+speed = 10.0
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("SphereShape3D_0cbed")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_6ft81")
+mesh = SubResource("SphereMesh_y1w5e")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_fopl1")
+cast_shadow = 0
+amount = 32
+lifetime = 0.5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_myu0h")
+draw_pass_1 = SubResource("QuadMesh_ra3wf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

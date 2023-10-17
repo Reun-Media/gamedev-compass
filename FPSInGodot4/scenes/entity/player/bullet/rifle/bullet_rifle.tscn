@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b10kvgli1ablb"]
+
+[ext_resource type="PackedScene" uid="uid://y07gqvbn72rj" path="res://scenes/entity/player/bullet/bullet_base.tscn" id="1_baw3y"]
+
+[node name="BulletRifle" node_paths=PackedStringArray("raycast") instance=ExtResource("1_baw3y")]
+damage = 75.0
+raycast = NodePath("RayCast3D")
+piercing = true
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="0"]
+target_position = Vector3(0, 0, -100)
+collision_mask = 5

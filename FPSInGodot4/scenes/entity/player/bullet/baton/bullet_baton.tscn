@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm73j3rv7xgtd"]
+
+[ext_resource type="PackedScene" uid="uid://y07gqvbn72rj" path="res://scenes/entity/player/bullet/bullet_base.tscn" id="1_1hye6"]
+[ext_resource type="PackedScene" uid="uid://bktwacbsocov5" path="res://scenes/entity/player/bullet/baton/baton_hole.tscn" id="2_8af62"]
+
+[node name="BulletBaton" node_paths=PackedStringArray("area", "raycast") instance=ExtResource("1_1hye6")]
+damage = 40.0
+destroy_delay = 0.1
+timeout_delay = 0.1
+bullet_hole = ExtResource("2_8af62")
+bullet_hole_rot_start = -20.0
+bullet_hole_rot_end = 20.0
+area = NodePath("")
+raycast = NodePath("RayCast3D")
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="0"]
+target_position = Vector3(0, 0, -2)
+collision_mask = 5

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://hs87njuiclwl"]
+
+[ext_resource type="Script" path="res://scenes/entity/player/gun/gun.gd" id="1_63k4f"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5xj3v"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8qwhr"]
+radius = 0.2
+height = 0.4
+
+[node name="GunBase" type="Node3D"]
+script = ExtResource("1_63k4f")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5xj3v")
+}
+
+[node name="Reference" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -0.25, -0.5)
+layers = 2
+mesh = SubResource("SphereMesh_8qwhr")
+
+[node name="ShootPoint" type="Marker3D" parent="."]

@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://b3rml6sdi3i3t"]
+
+[ext_resource type="PackedScene" uid="uid://dt6r571md0tnp" path="res://scenes/entity/pickup/pickup.tscn" id="1_lvdad"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q0het"]
+size = Vector3(0.1, 0.1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p1s7k"]
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.501961)
+
+[sub_resource type="Gradient" id="Gradient_45pt7"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o8bdp"]
+gradient = SubResource("Gradient_45pt7")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iese8"]
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_o8bdp")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="Gradient" id="Gradient_2xvtx"]
+colors = PackedColorArray(0.2, 0.2, 0.2, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ny8dn"]
+gradient = SubResource("Gradient_2xvtx")
+
+[sub_resource type="Gradient" id="Gradient_puvax"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6wjcx"]
+gradient = SubResource("Gradient_puvax")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3omih"]
+lifetime_randomness = 0.25
+emission_shape = 1
+emission_sphere_radius = 0.33
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+scale_min = 0.33
+color = Color(0.501961, 0.501961, 0.501961, 1)
+color_ramp = SubResource("GradientTexture1D_6wjcx")
+color_initial_ramp = SubResource("GradientTexture1D_ny8dn")
+
+[sub_resource type="QuadMesh" id="QuadMesh_wrwmg"]
+size = Vector2(0.1, 0.5)
+
+[node name="PickupHealth" instance=ExtResource("1_lvdad")]
+pickup_type = 1
+health_add_amount = 50.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_q0het")
+surface_material_override/0 = SubResource("StandardMaterial3D_p1s7k")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Model" index="3"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0)
+mesh = SubResource("BoxMesh_q0het")
+surface_material_override/0 = SubResource("StandardMaterial3D_p1s7k")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Model" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+material_override = SubResource("StandardMaterial3D_iese8")
+amount = 16
+randomness = 1.0
+visibility_aabb = AABB(-0.751941, -0.731753, -0.733726, 1.43266, 2.14634, 1.5116)
+process_material = SubResource("ParticleProcessMaterial_3omih")
+draw_pass_1 = SubResource("QuadMesh_wrwmg")

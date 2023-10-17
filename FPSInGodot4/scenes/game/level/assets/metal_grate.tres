@@ -1,0 +1,27 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://f55wf3rj8b06"]
+
+[ext_resource type="Texture2D" uid="uid://cashgxqaeeqqc" path="res://scenes/game/level/assets/metal_grate_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bm5t45hg5o7kk" path="res://scenes/game/level/assets/metal_grate_orm.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bj0j0vupqwkxe" path="res://scenes/game/level/assets/metal_grate_normal.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dapdpyx4v7tcl" path="res://scenes/game/level/assets/metal_grate_heightmap.png" id="3_teexr"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1")
+metallic = 1.0
+roughness_texture = ExtResource("2")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3")
+ao_enabled = true
+ao_texture = ExtResource("2")
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("3_teexr")
+texture_filter = 4

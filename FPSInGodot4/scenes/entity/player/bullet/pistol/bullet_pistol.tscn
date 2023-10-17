@@ -1,0 +1,102 @@
+[gd_scene load_steps=15 format=3 uid="uid://cqv1b0nh31vwy"]
+
+[ext_resource type="PackedScene" uid="uid://y07gqvbn72rj" path="res://scenes/entity/player/bullet/bullet_base.tscn" id="1_41yf0"]
+[ext_resource type="Script" path="res://scenes/entity/player/bullet/pistol/bullet_pistol.gd" id="2_p5wgt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jfgml"]
+radius = 0.05
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3g3o"]
+shading_mode = 0
+albedo_color = Color(1, 1, 4, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x4ugf"]
+material = SubResource("StandardMaterial3D_w3g3o")
+radius = 0.025
+height = 0.1
+
+[sub_resource type="Gradient" id="Gradient_gvogd"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0.5, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lle33"]
+gradient = SubResource("Gradient_gvogd")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x0cgx"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.25, 0.25, 0.25, 1)
+albedo_texture = SubResource("GradientTexture2D_lle33")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_u0827"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.88088, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_nkhsm"]
+curve = SubResource("Curve_u0827")
+
+[sub_resource type="Curve" id="Curve_ct73k"]
+_data = [Vector2(0, 0), 0.0, 0.933661, 0, 0, Vector2(1, 1), 0.931264, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_i8tqh"]
+curve = SubResource("Curve_ct73k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8mnff"]
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_nkhsm")
+turbulence_enabled = true
+turbulence_noise_scale = 7.0
+turbulence_noise_speed = Vector3(1, 1, 1)
+turbulence_influence_min = 0.5
+turbulence_influence_max = 1.0
+turbulence_initial_displacement_min = 0.1
+turbulence_initial_displacement_max = 0.2
+turbulence_influence_over_life = SubResource("CurveTexture_i8tqh")
+
+[sub_resource type="QuadMesh" id="QuadMesh_k3xfr"]
+size = Vector2(0.15, 0.15)
+
+[node name="BulletPistol" node_paths=PackedStringArray("area") instance=ExtResource("1_41yf0")]
+script = ExtResource("2_p5wgt")
+speed = 25.0
+destroy_delay = 0.5
+area = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="." index="0"]
+collision_layer = 8
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.173126)
+shape = SubResource("CapsuleShape3D_jfgml")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_x4ugf")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
+layers = 3
+light_color = Color(0, 0.501961, 1, 1)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_x0cgx")
+cast_shadow = 0
+amount = 32
+lifetime = 0.5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_8mnff")
+draw_pass_1 = SubResource("QuadMesh_k3xfr")

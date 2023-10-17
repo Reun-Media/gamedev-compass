@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://djocbclxtqlwe"]
+
+[ext_resource type="PackedScene" uid="uid://hs87njuiclwl" path="res://scenes/entity/player/gun/gun_base.tscn" id="1_f48kc"]
+[ext_resource type="Texture2D" uid="uid://lm6cqlsgh87y" path="res://scenes/entity/player/gun/baton/assets/baton_icon.png" id="2_rsbxm"]
+[ext_resource type="PackedScene" uid="uid://ds7ww8fvv2kbe" path="res://scenes/entity/player/gun/baton/baton_model.tscn" id="2_uhpk4"]
+[ext_resource type="PackedScene" uid="uid://dm73j3rv7xgtd" path="res://scenes/entity/player/bullet/baton/bullet_baton.tscn" id="2_x26xo"]
+
+[sub_resource type="Animation" id="Animation_syk45"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/baton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.337893, -0.271685, -0.232549)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/baton:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.873736, 0.112202, 0.076602)]
+}
+
+[sub_resource type="Animation" id="Animation_4nlds"]
+resource_name = "fire"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/baton:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.337893, -0.271685, -0.232549), Vector3(0.313491, -0.182631, -0.262494), Vector3(-0.576, -0.35, -0.32), Vector3(0.337893, -0.271685, -0.232549)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/baton:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.873736, 0.112202, 0.076602), Vector3(-0.823442, -1.22918, 0.151337), Vector3(-1.21966, 1.5064, -0.643594), Vector3(-0.873736, 0.112202, 0.076602)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y0rte"]
+_data = {
+"RESET": SubResource("Animation_syk45"),
+"fire": SubResource("Animation_4nlds")
+}
+
+[node name="GunBaton" instance=ExtResource("1_f48kc")]
+display_name = "Melee Baton"
+gun_icon = ExtResource("2_rsbxm")
+use_ammo = false
+weapon_type = 1
+bullet_scene = ExtResource("2_x26xo")
+fire_rate = 0.5
+fire_delay = 0.25
+
+[node name="baton" parent="Model" index="0" instance=ExtResource("2_uhpk4")]
+transform = Transform3D(0.393691, -0.0646572, 0.0287516, 0.0196511, 0.256034, 0.306693, -0.0679781, -0.300444, 0.255172, 0.337893, -0.271685, -0.232549)
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_y0rte")
+}
+
+[node name="Reference" parent="." index="2"]
+visible = false

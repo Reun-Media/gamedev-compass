@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6tgkq80n5kvv"]
+
+[ext_resource type="Script" path="res://scenes/entity/pickup_spawner/pickup_spawner.gd" id="1_hxjh0"]
+[ext_resource type="PackedScene" uid="uid://b3rml6sdi3i3t" path="res://scenes/entity/pickup/health/pickup_health.tscn" id="2_r8mq6"]
+[ext_resource type="PackedScene" uid="uid://owojm8hgm5yt" path="res://scenes/entity/pickup/pistol/pickup_pistol.tscn" id="3_cvl6y"]
+[ext_resource type="PackedScene" uid="uid://b21j5wtnvq6wk" path="res://scenes/entity/pickup/rifle/pickup_rifle.tscn" id="4_wms5u"]
+
+[node name="PickupSpawner" type="Node3D"]
+script = ExtResource("1_hxjh0")
+pickup_list = Array[PackedScene]([ExtResource("3_cvl6y"), ExtResource("2_r8mq6"), ExtResource("4_wms5u"), ExtResource("2_r8mq6")])

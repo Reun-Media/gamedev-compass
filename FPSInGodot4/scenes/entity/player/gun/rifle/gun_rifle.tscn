@@ -1,0 +1,274 @@
+[gd_scene load_steps=23 format=3 uid="uid://cqov4loln82m1"]
+
+[ext_resource type="PackedScene" uid="uid://hs87njuiclwl" path="res://scenes/entity/player/gun/gun_base.tscn" id="1_a5rg2"]
+[ext_resource type="PackedScene" uid="uid://uu63qv1dxp4y" path="res://scenes/entity/player/gun/rifle/rifle_model.tscn" id="2_4udhl"]
+[ext_resource type="PackedScene" uid="uid://b10kvgli1ablb" path="res://scenes/entity/player/bullet/rifle/bullet_rifle.tscn" id="2_eu26b"]
+[ext_resource type="Texture2D" uid="uid://n2ageufudyrj" path="res://scenes/entity/player/gun/rifle/assets/rifle_icon.png" id="2_xs5yv"]
+
+[sub_resource type="Gradient" id="Gradient_xbl3x"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4gh6x"]
+gradient = SubResource("Gradient_xbl3x")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb5ur"]
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_4gh6x")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_i2x4l"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6gu7e"]
+gradient = SubResource("Gradient_i2x4l")
+
+[sub_resource type="Curve" id="Curve_xoefd"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.33766, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_p13gm"]
+curve = SubResource("Curve_xoefd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kvjnb"]
+lifetime_randomness = 0.5
+direction = Vector3(0, 0, -1)
+spread = 5.0
+gravity = Vector3(0, -0.5, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 8.0
+scale_min = 0.25
+scale_curve = SubResource("CurveTexture_p13gm")
+color = Color(0.776471, 0.615686, 0.470588, 1)
+color_ramp = SubResource("GradientTexture1D_6gu7e")
+turbulence_noise_scale = 1.86
+turbulence_influence_min = 0.01
+turbulence_influence_max = 0.02
+
+[sub_resource type="QuadMesh" id="QuadMesh_khe0g"]
+size = Vector2(0.05, 0.05)
+
+[sub_resource type="Gradient" id="Gradient_45l30"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ix55w"]
+gradient = SubResource("Gradient_45l30")
+
+[sub_resource type="Curve" id="Curve_ccta5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.33766, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_auxef"]
+curve = SubResource("Curve_ccta5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vsslr"]
+direction = Vector3(0, 0, -1)
+spread = 5.0
+gravity = Vector3(0, 0, 0)
+scale_min = 1.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_auxef")
+color = Color(0.776471, 0.615686, 0.470588, 1)
+color_ramp = SubResource("GradientTexture1D_ix55w")
+turbulence_noise_scale = 1.86
+turbulence_influence_min = 0.01
+turbulence_influence_max = 0.02
+
+[sub_resource type="QuadMesh" id="QuadMesh_07sin"]
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="Animation" id="Animation_bvv3p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/OmniLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Model/GPUParticles3D2:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_onb0u"]
+resource_name = "fire"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.100156), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/OmniLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Model/GPUParticles3D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"restart"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Model/GPUParticles3D2:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Model/GPUParticles3D2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"restart"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nyexk"]
+_data = {
+"RESET": SubResource("Animation_bvv3p"),
+"fire": SubResource("Animation_onb0u")
+}
+
+[node name="GunRifle" instance=ExtResource("1_a5rg2")]
+display_name = "Sniper Rifle"
+gun_icon = ExtResource("2_xs5yv")
+ammo = 10
+weapon_type = 1
+bullet_scene = ExtResource("2_eu26b")
+fire_rate = 1.0
+
+[node name="rifle" parent="Model" index="0" instance=ExtResource("2_4udhl")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.178516, -0.185392, -0.397606)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Model" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178527, -0.15256, -0.899155)
+material_override = SubResource("StandardMaterial3D_lb5ur")
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_kvjnb")
+draw_pass_1 = SubResource("QuadMesh_khe0g")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Model" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178527, -0.15256, -0.899155)
+material_override = SubResource("StandardMaterial3D_lb5ur")
+emitting = false
+amount = 1
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.95
+randomness = 1.0
+fixed_fps = 60
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_vsslr")
+draw_pass_1 = SubResource("QuadMesh_07sin")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Model" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178527, -0.15256, -0.925997)
+light_color = Color(0.858824, 0.670588, 0.607843, 1)
+light_energy = 0.0
+omni_range = 2.5
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_nyexk")
+}
+
+[node name="Reference" parent="." index="2"]
+visible = false

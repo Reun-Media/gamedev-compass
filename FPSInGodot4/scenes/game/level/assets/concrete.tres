@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c7m4dund6n2ph"]
+
+[ext_resource type="Texture2D" uid="uid://cwnhj0s4si3kd" path="res://scenes/game/level/assets/concrete_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cdhehjy484abl" path="res://scenes/game/level/assets/concrete_normal.png" id="3"]
+
+[resource]
+albedo_texture = ExtResource("1")
+normal_enabled = true
+normal_texture = ExtResource("3")
+texture_filter = 4
