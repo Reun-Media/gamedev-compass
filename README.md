@@ -10,15 +10,9 @@
 </p>
 
 <p align="center">
-  <a href="https://www.youtube.com/@GameDevCompass">
-    <img alt="YouTube Channel Subscribers" src="https://img.shields.io/youtube/channel/subscribers/UCeYS4gXkfH0C4-CkpaWylAw?style=social">
-  </a>
-  <a href="https://mastodon.gamedev.place/@GameDevCompass">
-    <img alt="Mastodon Follow" src="https://img.shields.io/mastodon/follow/111250340537728809?domain=https%3A%2F%2Fmastodon.gamedev.place">
-  </a>
-  <a href="https://twitter.com/GameDevCompass">
-    <img alt="X (formerly Twitter) Follow" src="https://img.shields.io/twitter/follow/GameDevCompass">
-  </a>
+  <a href="https://www.youtube.com/@GameDevCompass"><img alt="YouTube Channel Subscribers" src="https://img.shields.io/youtube/channel/subscribers/UCeYS4gXkfH0C4-CkpaWylAw?style=social"></a>
+  <a href="https://mastodon.gamedev.place/@GameDevCompass"><img alt="Mastodon Follow" src="https://img.shields.io/mastodon/follow/111250340537728809?domain=https%3A%2F%2Fmastodon.gamedev.place"></a>
+  <a href="https://twitter.com/GameDevCompass"><img alt="X (formerly Twitter) Follow" src="https://img.shields.io/twitter/follow/GameDevCompass"></a>
 </p>
 
 # 🧭 Welcome to GameDev Compass
