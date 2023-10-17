@@ -35,6 +35,6 @@ Published on 2023-10-17.
 [hud.gd](./scenes/game/hud/hud.gd)  
 
 # License and Assets
-This project is licensed CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
-All assets are custom made for this project with the following exception:
+This project is licensed CC BY 4.0 https://creativecommons.org/licenses/by/4.0/  
+All assets are custom made for this project with the following exception:  
 Heebo Medium font from Google Fonts: https://fonts.google.com/specimen/Heebo
