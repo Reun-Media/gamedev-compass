@@ -18,7 +18,7 @@
 # 🧭 Welcome to GameDev Compass
 This repository contains accompanying source code and other files for [GameDev
 Compass video tutorials](https://www.youtube.com/@GameDevCompass/videos). Found
-a bug or have an idea? Feel free to [submit an isssue](https://github.com/Reun-Media/gamedev-compass/issues)
+a bug or have an idea? Feel free to [submit an issue](https://github.com/Reun-Media/gamedev-compass/issues)
 or [open a pull request](https://github.com/Reun-Media/gamedev-compass/pulls).
 
 ## Support us
